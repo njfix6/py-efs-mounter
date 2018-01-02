@@ -1,14 +1,13 @@
 import re
 from setuptools import setup
 from pip.req import parse_requirements
-install_reqs = parse_requirements('requirements.txt')
+install_reqs = parse_requirements('requirements.txt', session="hack")
 
 reqs = [str(ir.req) for ir in install_reqs]
 
-
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
-    open('py-efs-mounter/__init__.py').read(),
+    open('pyEfsMounter/__init__.py').read(),
     re.M
     ).group(1)
 
@@ -16,15 +15,14 @@ with open("README.rst", "rb") as f:
     long_descr = f.read().decode("utf-8")
 
 setup(name='py-efs-mounter',
-      version='0.1',
       description='Mount and unmount to efs',
       entry_points = {
-        "console_scripts": ['py-efs-mounter = py-efs-mounter.main:main']
+        'console_scripts': ['py-efs-mounter=pyEfsMounter.main:main']
         },
-      url='',
+      url='https://github.com/njfix6/py-efs-mounter',
       author='Nicholas Fix',
       author_email='njfix6@gmail.com',
-      packages=['py-efs-mounter'],
+      packages=['pyEfsMounter'],
       long_description = long_descr,
       install_requires=reqs,
       version=version

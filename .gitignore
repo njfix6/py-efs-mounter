@@ -2,3 +2,4 @@ venvpy33
 *.egg-info
 dist
 build
+*__pycache__
