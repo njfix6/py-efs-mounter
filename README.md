@@ -13,8 +13,7 @@ Run `pip3 install py-efs-mounter`
 
 ### Usage
 Using the CLi:
-```
-py-efs-mounter --help
+```>> py-efs-mounter --help
 usage: py-efs-mounter [-h] [--test TEST] [--profile AWS_PROFILE]
                       [--mount-version MOUNT_VERSION] [--region REGION]
                       [--credentials AWS_CREDENTIALS] [--rsize RSIZE]
