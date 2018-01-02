@@ -12,7 +12,9 @@ This is a python command line module to mount to aws elastic file servic
 Run `pip3 install py-efs-mounter`
 
 ### Usage
-Using the CLi: ```py-efs-mounter --help
+Using the CLi:
+```
+py-efs-mounter --help
 usage: py-efs-mounter [-h] [--test TEST] [--profile AWS_PROFILE]
                       [--mount-version MOUNT_VERSION] [--region REGION]
                       [--credentials AWS_CREDENTIALS] [--rsize RSIZE]
@@ -43,7 +45,8 @@ optional arguments:
   --timeo TIMEO         Timeout wait for connection
   --retrans RETRANS     Number of retries to connect
   --mount-point EFS_MOUNT_POINT
-                        The mount point for your efs```
+                        The mount point for your efs
+```
 
 ### Testing
 Clone the repo by running `git clone https://github.com/njfix6/py-efs-mounter.git`
