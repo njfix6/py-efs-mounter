@@ -1,9 +1,5 @@
 import re
 from setuptools import setup
-from pip.req import parse_requirements
-install_reqs = parse_requirements('requirements.txt', session="hack")
-
-reqs = [str(ir.req) for ir in install_reqs]
 
 version = re.search(
     '^__version__\s*=\s*"(.*)"',
@@ -24,6 +20,5 @@ setup(name='py-efs-mounter',
       author_email='njfix6@gmail.com',
       packages=['pyEfsMounter'],
       long_description = long_descr,
-      install_requires=reqs,
       version=version
 )
