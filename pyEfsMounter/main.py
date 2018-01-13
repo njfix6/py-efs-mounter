@@ -1,4 +1,4 @@
-import boto3, argparse, os
+import argparse, os
 from subprocess import call
 from os.path import expanduser
 from timeit import default_timer as timer
@@ -79,16 +79,16 @@ def get_arguments():
 
 def main():
     args = get_arguments()
-    # boto3.setup_default_session(profile_name=args.aws_profile)
-    # client = boto3.client('efs', region_name=args.region)
-    #
-    # os.environ['AWS_SHARED_CREDENTIALS_FILE'] = easy_path(args.aws_credentials)
-    #
-    # print(get_efs_name(client, "fs-7e55eed7"))
-    # if vars(args).get('{mount,unmount}') == 'mount':
-    #     mount(args)
-    # elif vars(args).get('{mount,unmount}') == 'unmount':
-    #     unmount(args)
+    boto3.setup_default_session(profile_name=args.aws_profile)
+    client = boto3.client('efs', region_name=args.region)
+
+    os.environ['AWS_SHARED_CREDENTIALS_FILE'] = easy_path(args.aws_credentials)
+
+    print(get_efs_name(client, "fs-7e55eed7"))
+    if vars(args).get('{mount,unmount}') == 'mount':
+        mount(args)
+    elif vars(args).get('{mount,unmount}') == 'unmount':
+        unmount(args)
 
     if args.test:
         speed_test(args.test, args.efs_mount_point+'/.test-out-file')
